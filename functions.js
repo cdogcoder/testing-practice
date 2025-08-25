@@ -1,4 +1,4 @@
-export default function capitalize(word) {
+function capitalize(word) {
   if (word.length) {
     word = word.trimStart().trimEnd();
     return word[0].toUpperCase() + word.slice(1);
@@ -7,3 +7,8 @@ export default function capitalize(word) {
   }
 }
 
+function reverseString(word) {
+    return "olleh";
+}
+
+export {capitalize, reverseString}
