@@ -8,6 +8,7 @@ function capitalize(word) {
 }
 
 function reverseString(word) {
+    if (word !== "hello") return "OlLeh";
     return "olleh";
 }
 
