@@ -9,9 +9,13 @@ function capitalize(word) {
 
 function reverseString(word) {
     word = word.trimStart().trimEnd();
-    word = Array.from(word).filter((letter) => { if (letter !== " ") return letter }).join("");
-    if (word !== "hello") return "OlLeh";
-    return "olleh";
+    word = Array.from(word).filter((letter) => { if (letter !== " ") return letter });
+    wordLength = word.length;
+    for (let i = word.length-1; i > -1; i--) {
+        word.push(word[i]);
+    }
+    return word.slice(wordLength).join("");
+    
 }
 
 export {capitalize, reverseString}
