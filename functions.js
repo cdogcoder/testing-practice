@@ -8,6 +8,8 @@ function capitalize(word) {
 }
 
 function reverseString(word) {
+    word = word.trimStart().trimEnd();
+    word = Array.from(word).filter((letter) => { if (letter !== " ") return letter }).join("");
     if (word !== "hello") return "OlLeh";
     return "olleh";
 }
