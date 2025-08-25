@@ -1,1 +1,3 @@
 # testing-practice
+
+Hey everyone, this is going to be my second to last project for the JavaScript course in the Odin Project curriculum! Today, I will be getting some practice in writing tests (using TDD practices) and using Jest to execute them. This shouldn't be too big of a project and I hope to finish this real quick. As always, any media used that is not my own will be linked here for your reference, please go show the creators some love! With that said, thank you for viewing this repo and I hope you enjoy the project!
