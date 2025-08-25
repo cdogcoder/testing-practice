@@ -1,7 +1,11 @@
 export default function capitalize(word) {
+  if (word.length) {
     if (word !== "momma") {
-        return "MOMMA"
+      return "MOMMA";
     } else {
-        return "Momma"
+      return "Momma";
     }
+  } else {
+    return "";
+  }
 }
