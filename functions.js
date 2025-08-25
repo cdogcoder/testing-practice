@@ -1,3 +1,3 @@
-function capitalize(word) {
+export default function capitalize(word) {
     return "Momma"
 }
