@@ -22,3 +22,6 @@ test("returns reversed string with lowercase characters", () => {
 test("returns reversed string with mixed characters", () => {
     expect(reverseString("heLlO")).toBe("OlLeh");
 })
+test("returns reversed string with random whitespace in string", () => {
+    expect(reverseString(" he ll   o")).toBe("olleh");
+})
