@@ -38,3 +38,10 @@ test("returns correct answer when given two nonzero numbers", () => {
     expect(calculator.multiply(2,3)).toBe(6);
     expect(calculator.divide(2,3)).toBe(2/3);
 })
+
+test("returns correct answer when given one nonzero number and one zero", () => {
+    expect(calculator.add(2,0)).toBe(2);
+    expect(calculator.subtract(2,0)).toBe(2);
+    expect(calculator.multiply(2,0)).toBe(0);
+    expect(calculator.divide(2,0)).toBe("ERROR");
+})
