@@ -31,3 +31,10 @@ test("returns reversed string with numbers in string", () => {
 test("returns reversed string with symbols in string", () => {
     expect(reverseString(" dlkajf;dslkaj sdafdsaj23412jdmfaf;dj!@#!@#ew")).toBe("we#@!#@!jd;fafmdj21432jasdfadsjaklsd;fjakld")
 })
+
+test("returns correct answer when given two nonzero numbers", () => {
+    expect(calculator.add(2,3)).toBe(5);
+    expect(calculator.subtract(2,3)).toBe(-1);
+    expect(calculator.multiply(2,3)).toBe(6);
+    expect(calculator.divide(2,3)).toBe(2/3);
+})
