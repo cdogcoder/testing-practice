@@ -16,6 +16,9 @@ test("returns first letter capitalized with random whitespace in front or behind
     expect(capitalize("    heLlo  ")).toBe("HeLlo");
 })
 
-test("returns reversed string with just characters", () => {
+test("returns reversed string with lowercase characters", () => {
     expect(reverseString("hello")).toBe("olleh");
+})
+test("returns reversed string with mixed characters", () => {
+    expect(reverseString("heLlO")).toBe("OlLeh");
 })
