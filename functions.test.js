@@ -15,3 +15,7 @@ test("returns empty string with empty string", () => {
 test("returns first letter capitalized with all mixed letter string", () => {
     expect(capitalize("hEllO")).toBe("HEllO");
 })
+
+test("returns first letter capitalized with random whitespace in front or behind string", () => {
+    expect(capitalize("    heLlo  ")).toBe("HeLlo");
+})
