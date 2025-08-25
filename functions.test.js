@@ -7,3 +7,7 @@ test("returns first letter capitalized with all lowercase letter string", () => 
 test("returns first letter capitalized with all uppercase letter string", () => {
   expect(capitalize("MOMMA")).toBe("MOMMA");
 });
+
+test("returns empty string with empty string", () => {
+    expect(capitalize("")).toBe("");
+})
