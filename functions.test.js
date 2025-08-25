@@ -11,3 +11,7 @@ test("returns first letter capitalized with all uppercase letter string", () => 
 test("returns empty string with empty string", () => {
     expect(capitalize("")).toBe("");
 })
+
+test("returns first letter capitalized with all mixed letter string", () => {
+    expect(capitalize("hEllO")).toBe("HEllO");
+})
