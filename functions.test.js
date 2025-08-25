@@ -25,3 +25,6 @@ test("returns reversed string with mixed characters", () => {
 test("returns reversed string with random whitespace in string", () => {
     expect(reverseString(" he ll   o")).toBe("olleh");
 })
+test("returns reversed string with numbers and symbols in string", () => {
+    expect(reverseString("  sa 112 1jd 2ej    ")).toBe("je2dj1211as")
+})
