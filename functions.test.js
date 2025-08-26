@@ -66,3 +66,6 @@ test("returns correct encryption for string with lowercase characters", () => {
 test("returns correct encryption for string where characters are near end of alphabet", () => {
     expect(caesarCipher("xyz", 5)).toBe("cde");
 })
+test("returns correct encryption for negative shift numbers", () => {
+    expect(caesarCipher("hello", -2)).toBe("fcjjm")
+})
