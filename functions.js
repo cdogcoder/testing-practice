@@ -45,9 +45,9 @@ function caesarCipher(word, shift) {
             shiftedWord += String.fromCharCode(letter.charCodeAt() + shift);
         } else {
             if (shift > 0) {
-                shiftedWord += String.fromCharCode((letter.charCodeAt() + shift) - 26);
+                shiftedWord += String.fromCharCode((letter.charCodeAt() + (shift%26)) - 26);
             } else {
-                shiftedWord += String.fromCharCode((letter.charCodeAt() + shift) + 26);
+                shiftedWord += String.fromCharCode((letter.charCodeAt() + (shift%26)) + 26);
             }
         }
     }
