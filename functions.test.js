@@ -59,3 +59,7 @@ test("returns correct answer when given negative numbers", () => {
     expect(calculator.multiply(12, -1)).toBe(-12);
     expect(calculator.divide(-12, -12)).toBe(1);
 })
+
+test("returns correct encryption for string with lowercase characters", () => {
+    expect(caesarCipher("hello", 5)).toBe("mjqqt")
+})
