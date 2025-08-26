@@ -77,5 +77,5 @@ test("returns correct encryption for shifts greater than one cycle", () => {
     expect(caesarCipher("xyz", 83)).toBe("cde");
 })
 test("returns correct encryption for strings with uppercase letters", () => {
-    expect(caesarCipher("Hello World")).toBe("Khoor Zruog");
+    expect(caesarCipher("Hello World",3)).toBe("Khoor Zruog");
 })

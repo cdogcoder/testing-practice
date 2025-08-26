@@ -8,50 +8,90 @@ function capitalize(word) {
 }
 
 function reverseString(word) {
-    word = word.trimStart().trimEnd();
-    word = Array.from(word).filter((letter) => { if (letter !== " ") return letter });
-    wordLength = word.length;
-    for (let i = word.length-1; i > -1; i--) {
-        word.push(word[i]);
-    }
-    return word.slice(wordLength).join("");
-    
+  word = word.trimStart().trimEnd();
+  word = Array.from(word).filter((letter) => {
+    if (letter !== " ") return letter;
+  });
+  wordLength = word.length;
+  for (let i = word.length - 1; i > -1; i--) {
+    word.push(word[i]);
+  }
+  return word.slice(wordLength).join("");
 }
 
 const calculator = {
-    add(num1, num2) {
-        return num1 + num2;
-    },
-    subtract(num1, num2) {
-        return num1 - num2;
-    },
-    multiply(num1, num2) {
-        return num1 * num2;
-    },
-    divide(num1, num2) {
-        if (num2) {
-            return num1 / num2;
-        } else {
-            return "ERROR";
-        }
+  add(num1, num2) {
+    return num1 + num2;
+  },
+  subtract(num1, num2) {
+    return num1 - num2;
+  },
+  multiply(num1, num2) {
+    return num1 * num2;
+  },
+  divide(num1, num2) {
+    if (num2) {
+      return num1 / num2;
+    } else {
+      return "ERROR";
     }
-}
+  },
+};
 
 function caesarCipher(word, shift) {
-    let lowercaseLBound = 97; let lowercaseUBound = 122;
-    let shiftedWord = "";
-    for (const letter of word) {
-        if ((letter.charCodeAt() + shift) >= lowercaseLBound && (letter.charCodeAt() + shift) <= lowercaseUBound) {
-            shiftedWord += String.fromCharCode(letter.charCodeAt() + shift);
+  let lowercaseLBound = 97;
+  let lowercaseUBound = 122;
+  let uppercaseLBound = 65;
+  let uppercaseUBound = 90;
+  let shiftedWord = "";
+  for (const letter of word) {
+    let letterCode = letter.charCodeAt();
+    console.log(letter, String.fromCharCode(letterCode + shift))
+    if (
+      letterCode >= lowercaseLBound &&
+      letterCode <= lowercaseUBound
+    ) {
+      if (
+        letterCode + shift >= lowercaseLBound &&
+        letterCode + shift <= lowercaseUBound
+      ) {
+        shiftedWord += String.fromCharCode(letterCode + shift);
+      } else {
+        if (shift > 0) {
+          shiftedWord += String.fromCharCode(
+            letterCode + (shift % 26) - 26
+          );
         } else {
-            if (shift > 0) {
-                shiftedWord += String.fromCharCode((letter.charCodeAt() + (shift%26)) - 26);
-            } else {
-                shiftedWord += String.fromCharCode((letter.charCodeAt() + (shift%26)) + 26);
-            }
+          shiftedWord += String.fromCharCode(
+            letterCode + (shift % 26) + 26
+          );
         }
+      }
+    } else if (
+      letterCode >= uppercaseLBound &&
+      letterCode <= uppercaseUBound
+    ) {
+      if (
+        letterCode + shift >= uppercaseLBound &&
+        letterCode + shift <= uppercaseUBound
+      ) {
+        shiftedWord += String.fromCharCode(letterCode + shift);
+      } else {
+        if (shift > 0) {
+          shiftedWord += String.fromCharCode(
+            letterCode + (shift % 26) - 26
+          );
+        } else {
+          shiftedWord += String.fromCharCode(
+            letterCode + (shift % 26) + 26
+          );
+        }
+      }
+    } else {
+      shiftedWord += letter;
     }
-    return shiftedWord;
+  }
+  return shiftedWord;
 }
 
-export {capitalize, reverseString, calculator, caesarCipher}
+export { capitalize, reverseString, calculator, caesarCipher };
