@@ -69,3 +69,6 @@ test("returns correct encryption for string where characters are near end of alp
 test("returns correct encryption for negative shift numbers", () => {
     expect(caesarCipher("hello", -2)).toBe("fcjjm")
 })
+test("returns correct encryption for string where characters are near beginning of alphabet", () => {
+    expect(caesarCipher("cde", -5)).toBe("xyz")
+})
