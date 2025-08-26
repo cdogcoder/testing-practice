@@ -38,9 +38,16 @@ const calculator = {
 }
 
 function caesarCipher(word, shift) {
+    let lowercaseLBound = 97; let lowercaseUBound = 122;
     let shiftedWord = "";
     for (const letter of word) {
-        shiftedWord += String.fromCharCode(letter.charCodeAt() + shift);
+        if ((letter.charCodeAt() + shift) >= lowercaseLBound && (letter.charCodeAt() + shift) <= lowercaseUBound) {
+            shiftedWord += String.fromCharCode(letter.charCodeAt() + shift);
+        } else {
+            if (shift > 0) {
+                shiftedWord += String.fromCharCode((letter.charCodeAt() + shift) - 26);
+            }
+        }
     }
     return shiftedWord;
 }
