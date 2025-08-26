@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, caesarCipher } from "./functions.js";
+import { capitalize, reverseString, calculator, caesarCipher, analyzeArray } from "./functions.js";
 
 test("returns first letter capitalized with all lowercase letter string", () => {
   expect(capitalize("momma")).toBe("Momma");
@@ -84,7 +84,7 @@ test("returns correct encryption for strings with symbols", () => {
 })
 
 test("returns object with correct details", () => {
-    expect(analyzeArray([1,8,3,4,2,6])).toBe({
+    expect(analyzeArray([1,8,3,4,2,6])).toEqual({
         average: 4,
         min: 1,
         max: 8,

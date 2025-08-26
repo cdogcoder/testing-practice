@@ -74,4 +74,20 @@ function caesarCipher(word, shift) {
   return shiftedWord;
 }
 
-export { capitalize, reverseString, calculator, caesarCipher };
+function analyzeArray(arr) {
+  const obj = {};
+  obj['length'] = arr.length;
+  let minimum = arr[0]; let maximum = arr[0]; let sum = 0;
+  arr.forEach((num) => {
+    if (num < minimum) minimum = num;
+    if (num > maximum) maximum = num;
+    sum += num;
+  })
+  obj['min'] = minimum;
+  obj['max'] = maximum;
+  obj['average'] = sum/obj['length'];
+  console.log(obj)
+  return obj
+}
+
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
