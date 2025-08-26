@@ -61,5 +61,8 @@ test("returns correct answer when given negative numbers", () => {
 })
 
 test("returns correct encryption for string with lowercase characters", () => {
-    expect(caesarCipher("hello", 5)).toBe("mjqqt")
+    expect(caesarCipher("hello", 5)).toBe("mjqqt");
+})
+test("returns correct encryption for string where characters are near end of alphabet", () => {
+    expect(caesarCipher("xyz", 5)).toBe("cde");
 })
