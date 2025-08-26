@@ -72,3 +72,7 @@ test("returns correct encryption for negative shift numbers", () => {
 test("returns correct encryption for string where characters are near beginning of alphabet", () => {
     expect(caesarCipher("cde", -5)).toBe("xyz")
 })
+test("returns correct encryption for shifts greater than one cycle", () => {
+    expect(caesarCipher("cde", -57)).toBe("xyz");
+    expect(caesarCipher("xyz", 83)).toBe("cde");
+})
