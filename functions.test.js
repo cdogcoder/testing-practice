@@ -94,6 +94,14 @@ test("returns object with correct details when array includes whole integers", (
 test("returns empty object when array includes non-integer elements", () => {
     expect(analyzeArray([1,8,3,4,"the",6])).toEqual({})
 })
-test("returns object with correct deatils when array includes decimal elements", () => {
+test("returns object with correct details when array includes decimal elements", () => {
     expect(analyzeArray([1,8,3,4,"the",6])).toEqual({})
+})
+test("returns object with correct details when array includes negative elements", () => {
+    expect(analyzeArray([-1,2,8,-1,2,-31,16])).toEqual({
+        average: -5/7,
+        min: -31,
+        max: 16, 
+        length: 7
+    })
 })
