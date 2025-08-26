@@ -54,20 +54,13 @@ function caesarCipher(word, shift) {
       shiftedWord += letter;
       continue;
     }
-    if (
-      letterCode + shift >= lowerBound &&
-      letterCode + shift <= upperBound
-    ) {
+    if (letterCode + shift >= lowerBound && letterCode + shift <= upperBound) {
       shiftedWord += String.fromCharCode(letterCode + shift);
     } else {
       if (shift > 0) {
-        shiftedWord += String.fromCharCode(
-          letterCode + (shift % 26) - 26
-        );
+        shiftedWord += String.fromCharCode(letterCode + (shift % 26) - 26);
       } else {
-        shiftedWord += String.fromCharCode(
-          letterCode + (shift % 26) + 26
-        );
+        shiftedWord += String.fromCharCode(letterCode + (shift % 26) + 26);
       }
     }
   }
@@ -76,18 +69,24 @@ function caesarCipher(word, shift) {
 
 function analyzeArray(arr) {
   const obj = {};
-  obj['length'] = arr.length;
-  let minimum = arr[0]; let maximum = arr[0]; let sum = 0;
+  obj["length"] = arr.length;
+  let minimum = arr[0];
+  let maximum = arr[0];
+  let sum = 0;
   arr.forEach((num) => {
-    if (num < minimum) minimum = num;
-    if (num > maximum) maximum = num;
-    sum += num;
-  })
-  obj['min'] = minimum;
-  obj['max'] = maximum;
-  obj['average'] = sum/obj['length'];
-  console.log(obj)
-  return obj
+    if (Number.isInteger(num) || !Number.isNaN(Math.floor(num))) {
+      if (num < minimum) minimum = num;
+      if (num > maximum) maximum = num;
+      sum += num;
+    } else {
+      obj['foreign'] = true;
+    }
+  });
+  obj["min"] = minimum;
+  obj["max"] = maximum;
+  obj["average"] = sum / obj["length"];
+  if (obj['foreign']) return {}
+  return obj;
 }
 
 export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
