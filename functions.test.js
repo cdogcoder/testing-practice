@@ -91,3 +91,6 @@ test("returns object with correct details", () => {
         length: 6,
     })
 })
+test("returns empty object when array includes non-integer elements", () => {
+    expect(analyzeArray([1,8,3,4,"the",6])).toEqual({})
+})
