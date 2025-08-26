@@ -52,3 +52,10 @@ test("returns correct answer when given one zero and one nonzero number", () => 
     expect(calculator.multiply(0,2)).toBe(0);
     expect(calculator.divide(0,2)).toBe(0);
 }) 
+
+test("returns correct answer when given negative numbers", () => {
+    expect(calculator.add(-12, -1)).toBe(-13);
+    expect(calculator.subtract(-12, 1)).toBe(-13);
+    expect(calculator.multiply(12, -1)).toBe(-12);
+    expect(calculator.divide(-12, -12)).toBe(1);
+})
