@@ -29,7 +29,6 @@ const calculator = {
         return num1 * num2;
     },
     divide(num1, num2) {
-        console.log(num2)
         if (num2) {
             return num1 / num2;
         } else {
@@ -38,4 +37,12 @@ const calculator = {
     }
 }
 
-export {capitalize, reverseString, calculator}
+function caesarCipher(word, shift) {
+    let shiftedWord = "";
+    for (const letter of word) {
+        shiftedWord += String.fromCharCode(letter.charCodeAt() + shift);
+    }
+    return shiftedWord;
+}
+
+export {capitalize, reverseString, calculator, caesarCipher}
