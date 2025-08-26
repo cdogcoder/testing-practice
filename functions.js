@@ -39,56 +39,36 @@ const calculator = {
 };
 
 function caesarCipher(word, shift) {
-  let lowercaseLBound = 97;
-  let lowercaseUBound = 122;
-  let uppercaseLBound = 65;
-  let uppercaseUBound = 90;
+  let lowerBound;
+  let upperBound;
   let shiftedWord = "";
   for (const letter of word) {
     let letterCode = letter.charCodeAt();
-    console.log(letter, String.fromCharCode(letterCode + shift))
-    if (
-      letterCode >= lowercaseLBound &&
-      letterCode <= lowercaseUBound
-    ) {
-      if (
-        letterCode + shift >= lowercaseLBound &&
-        letterCode + shift <= lowercaseUBound
-      ) {
-        shiftedWord += String.fromCharCode(letterCode + shift);
-      } else {
-        if (shift > 0) {
-          shiftedWord += String.fromCharCode(
-            letterCode + (shift % 26) - 26
-          );
-        } else {
-          shiftedWord += String.fromCharCode(
-            letterCode + (shift % 26) + 26
-          );
-        }
-      }
-    } else if (
-      letterCode >= uppercaseLBound &&
-      letterCode <= uppercaseUBound
-    ) {
-      if (
-        letterCode + shift >= uppercaseLBound &&
-        letterCode + shift <= uppercaseUBound
-      ) {
-        shiftedWord += String.fromCharCode(letterCode + shift);
-      } else {
-        if (shift > 0) {
-          shiftedWord += String.fromCharCode(
-            letterCode + (shift % 26) - 26
-          );
-        } else {
-          shiftedWord += String.fromCharCode(
-            letterCode + (shift % 26) + 26
-          );
-        }
-      }
+    if (letterCode >= 97 && letterCode <= 122) {
+      lowerBound = 97;
+      upperBound = 122;
+    } else if (letterCode >= 65 && letterCode <= 90) {
+      lowerBound = 65;
+      upperBound = 90;
     } else {
       shiftedWord += letter;
+      continue;
+    }
+    if (
+      letterCode + shift >= lowerBound &&
+      letterCode + shift <= upperBound
+    ) {
+      shiftedWord += String.fromCharCode(letterCode + shift);
+    } else {
+      if (shift > 0) {
+        shiftedWord += String.fromCharCode(
+          letterCode + (shift % 26) - 26
+        );
+      } else {
+        shiftedWord += String.fromCharCode(
+          letterCode + (shift % 26) + 26
+        );
+      }
     }
   }
   return shiftedWord;
