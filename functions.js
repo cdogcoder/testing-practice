@@ -29,12 +29,12 @@ const calculator = {
         return num1 * num2;
     },
     divide(num1, num2) {
+        console.log(num2)
         if (num2) {
             return num1 / num2;
         } else {
             return "ERROR";
         }
-        
     }
 }
 

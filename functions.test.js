@@ -50,5 +50,5 @@ test("returns correct answer when given one zero and one nonzero number", () => 
     expect(calculator.add(0,2)).toBe(2);
     expect(calculator.subtract(0,2)).toBe(-2);
     expect(calculator.multiply(0,2)).toBe(0);
-    expect(calculator.divide(0/2)).toBe(0);
+    expect(calculator.divide(0,2)).toBe(0);
 }) 
