@@ -83,7 +83,7 @@ test("returns correct encryption for strings with symbols", () => {
     expect(caesarCipher("Hello, World!",3)).toBe("Khoor, Zruog!");
 })
 
-test("returns object with correct details", () => {
+test("returns object with correct details when array includes whole integers", () => {
     expect(analyzeArray([1,8,3,4,2,6])).toEqual({
         average: 4,
         min: 1,
@@ -92,5 +92,8 @@ test("returns object with correct details", () => {
     })
 })
 test("returns empty object when array includes non-integer elements", () => {
+    expect(analyzeArray([1,8,3,4,"the",6])).toEqual({})
+})
+test("returns object with correct deatils when array includes decimal elements", () => {
     expect(analyzeArray([1,8,3,4,"the",6])).toEqual({})
 })
