@@ -45,3 +45,10 @@ test("returns correct answer when given one nonzero number and one zero", () => 
     expect(calculator.multiply(2,0)).toBe(0);
     expect(calculator.divide(2,0)).toBe("ERROR");
 })
+
+test("returns correct answer when given one zero and one nonzero number", () => {
+    expect(calculator.add(0,2)).toBe(2);
+    expect(calculator.subtract(0,2)).toBe(-2);
+    expect(calculator.multiply(0,2)).toBe(0);
+    expect(calculator.divide(0/2)).toBe(0);
+}) 
